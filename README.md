@@ -122,10 +122,12 @@ Install Bats, and in this project directory run:
 ## Create Users
 
 get into the container	
+
 	docker exec -it <container name> /bin/bash
 	docker exec -it <container name> <command>
 
 generate new password 
+
 	slappasswd -h {} 
 then hit enter
 once you get your password, copy it so that you can use it when you create a user record
