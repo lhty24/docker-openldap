@@ -121,40 +121,39 @@ Install Bats, and in this project directory run:
 ++++++++++++++
 ## Create Users
 
-get into the container
-	oh hello there		
-```docker exec -it <container name> /bin/bash```
-`docker exec -it <container name> <command>`
+get into the container	
+	docker exec -it <container name> /bin/bash
+	docker exec -it <container name> <command>
 
 generate new password 
-`slappasswd -h {}` 
+	slappasswd -h {} 
 then hit enter
 once you get your password, copy it so that you can use it when you create a user record
 
-`ldapadd -x -D "cn=admin,dc=,dc= -W`
+	ldapadd -x -D "cn=admin,dc=,dc= -W
 then it will ask for admin password, once you enter that, it will wait for you to enter new record like so
-`dn: ou=groups,dc=,dc=
-objectclass: organizationalUnit
-objectclass: top
-ou: users`
+	dn: ou=groups,dc=,dc=
+	objectclass: organizationalUnit
+	objectclass: top
+	ou: users
 then hit enter twice to push your entry
 
 for users it will go exactly the some way except you need to add more infomation
-`dn: uid=,ou=,dc=,dc=
-cn: first name lastname
-givenname: first name
-sn: last name
-uid: username
-uidnumber:
-userpassword:
-gid: this is important to add of you are creating posixAccount
-homedirectory: /home/users/
-loginshell: /bin/sh
-objectclass: inetOrgPerson
-objectclass: posixAccount
-objectclass: top`
+
+	dn: uid=,ou=,dc=,dc=
+	cn: first name lastname
+	givenname: first name
+	sn: last name
+	uid: username
+	uidnumber:
+	userpassword:
+	gid: this is important to add of you are creating posixAccount
+	homedirectory: /home/users/
+	loginshell: /bin/sh
+	objectclass: inetOrgPerson
+	objectclass: posixAccount
+	objectclass: top
 
 PS: you probably need to lay your user DN like so "uid,ou,dc,dc" especially if you are using ldap for user login and authentication
 
-    sup
-	hi
+
