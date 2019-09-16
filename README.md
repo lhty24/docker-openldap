@@ -122,6 +122,7 @@ Install Bats, and in this project directory run:
 ## Create Users
 
 get into the container
+	oh hello there		
 ```docker exec -it <container name> /bin/bash```
 `docker exec -it <container name> <command>`
 
